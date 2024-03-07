@@ -39,7 +39,9 @@ function Todo({ todo, isActive }: TodoProps) {
   };
 
   const handleRemoveButton = () => {
-    deleteMutation.mutate(todo.id);
+    if(window.confirm('삭제하시겠습니까?')) {
+      deleteMutation.mutate(todo.id);
+    }
   };
 
   return (
